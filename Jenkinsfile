@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
-                bat 'pip install'
+                bat 'pip install flask requests pytest'
             }
         }
         stage('Build Docker Image') {
