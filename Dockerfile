@@ -1,18 +1,17 @@
-# Use a Node.js base image
-FROM node:14
+# Use Python base image
+FROM python:3.9-slim
 
-# Set the working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy package.json and install dependencies
-COPY package*.json ./
-RUN npm install
-
-# Copy the application code
+# Copy application code
 COPY . .
 
-# Expose the application port
-EXPOSE 3000
+# Install dependencies
+RUN pip install -r requirements.txt
 
-# Command to run the application
-CMD ["node", "app.js"]
+# Expose the application port
+EXPOSE 5000
+
+# Run the application
+CMD ["python", "app.py"]
