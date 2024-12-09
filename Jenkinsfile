@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Install Dependencies') {
             steps {
-                bat 'npm install'
+                bat 'pip install'
             }
         }
         stage('Build Docker Image') {
